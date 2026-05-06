@@ -4,6 +4,7 @@ from flask_mail import Mail,Message
 import pymysql
 from datetime import datetime
 import json
+import os
 
 app=Flask(__name__)
 
@@ -21,7 +22,8 @@ app.config['MAIL_PASSWORD']=mail_params['mail_password']
 app.config['MAIL_DEFAULT_SENDER']=mail_params['mail_default_sender']
 
 mail=Mail(app)
-local_server=True
+
+local_server = os.environ.get("LOCAL_SERVER", params.get("local_server")) == "True"
 
 pymysql.install_as_MySQLdb()
 if(local_server):
