@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.png') }}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto text-center">
+        <div class="site-heading">
+          <h1 class="text-white">All Posts</h1>
+          <span class="subheading">Read all blog posts here</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      {% for post in posts %}
+      
+      <div class="post-preview">
+        <a href="{{ url_for('posts', post_slug=post.slug) }}">
+          <h2 class="post-title">
+            {{ post.title }}
+          </h2>
+          <h3 class="post-subtitle">
+            {{ post.content[:120] }}...
+          </h3>
+        </a>
+        <p class="post-meta">
+          Posted by <strong>{{ post.author }}</strong> on {{ post.date }}
+        </p>
+      </div>
+
+      <hr>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

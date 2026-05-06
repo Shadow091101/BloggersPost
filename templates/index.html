@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- 🔥 HERO SECTION -->
+<header class="py-5 text-white text-center" style="background: linear-gradient(to right, #141e30, #243b55);">
+  <div class="container">
+    <img class="img-fluid rounded-circle mb-3" src="https://dummyimage.com/150x150/6c757d/ffffff" alt="">
+    <h1 class="fw-bold">{{ params['blog_name'] }}</h1>
+    <p class="lead">Learn Flask, Python & Web Development practically 🚀</p>
+    <a href="{{ url_for('all_posts') }}" class="btn btn-light mt-3">Explore Posts</a>
+  </div>
+</header>
+
+<!-- 📰 LATEST POSTS -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Latest Posts</h2>
+
+    <div class="row">
+      {% for post in posts %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">
+              {{ post.content[:100] }}...
+            </p>
+            <a href="{{ url_for('posts', post_slug=post.slug) }}" class="btn btn-dark btn-sm">Read More</a>
+          </div>
+          <div class="card-footer text-muted">
+            By {{ post.author }} • {{ post.date }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-3">
+      <a href="{{ url_for('all_posts') }}" class="btn btn-outline-dark">View All Posts</a>
+    </div>
+  </div>
+</section>
+
+<!-- 👨‍💻 ABOUT ME -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2>About Me</h2>
+    <p class="lead mt-3">
+      Hi, I’m Manav 👋 <br>
+      A BSc IT student passionate about Web Development, Python & AI.  
+      I build real-world projects and share everything I learn 🚀
+    </p>
+  </div>
+</section>
+
+<!-- 📩 CONTACT CTA -->
+<section class="py-5 text-white text-center" style="background:#343a40;">
+  <div class="container">
+    <h2>Want to connect with me?</h2>
+    <p class="lead">Have questions, ideas, or collaboration? Let’s talk!</p>
+    <a href="{{ url_for('contact') }}" class="btn btn-light">Contact Me</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+{% block body %}
+
+		<div class="wrapper">
+			<div class="inner">
+				<form action="/contact" method="post">
+					<h3>Contact Us</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+					<label class="form-group">
+						<input type="text" class="form-control" name="name"  required>
+						<span>Your Name</span>
+						<span class="border"></span>
+					</label>
+					<label class="form-group">
+						<input type="text" class="form-control" name="email"  required>
+						<span for="">Your Mail</span>
+						<span class="border"></span>
+					</label>
+					<label class="form-group" >
+						<textarea  class="form-control" name="msg" required></textarea>
+						<span for="">Your Message</span>
+						<span class="border"></span>
+					</label>
+					<button>Submit 
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+
+{% endblock%}

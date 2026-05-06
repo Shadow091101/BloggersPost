@@ -1,0 +1,19 @@
+{
+    "params":
+    {
+        "local_server":"True",
+        "local_uri":"mysql+pymysql://root:manavnaik%40123@localhost/bloggersposts",
+        "prod_uri":"mysql+pymysql://root:manavnaik%40123@localhost/bloggersposts",
+        "blog_name":"BloggersPost"
+    },
+    "pass":{},
+    "mail_params":
+    {
+        "mail_server":"smtp.gmail.com",
+        "mail_port":587,
+        "mail_use_tls":"True",
+        "mail_username":"manavnaik442@gmail.com",
+        "mail_password":"assovlkhnacbrhmx",
+        "mail_default_sender":"manavnaik442@gmail.com"
+    }
+}
