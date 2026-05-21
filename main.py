@@ -47,24 +47,24 @@ class Posts(db.Model):
     content = db.Column(db.String(150), unique=False, nullable=False)
     author = db.Column(db.String (120), unique=False, nullable=False)
     slug=db.Column(db.String(100),unique=False,nullable=False)
-    date = db.Column(db.String (100),nullable=True)
+    date = db.Column(db.DateTime,nullable=True)
     
 
 @app.route("/")
 def index():
     posts = Posts.query.order_by(Posts.date.desc()).limit(3).all()
-    return render_template("index.html", params=params, posts=posts)
+    return render_template("index.html", params=params, posts=posts,active="home")
 
 @app.route("/posts")
 def all_posts():
-    posts = Posts.query.all()
-    return render_template("all_posts.html", params=params, posts=posts)
+    posts = Posts.query.order_by(Posts.date.desc()).all()
+    return render_template("all_posts.html", params=params, posts=posts,active="posts")
 
 @app.route("/posts/<string:post_slug>",methods=['GET'])
 
 def posts(post_slug):
     post=Posts.query.filter_by(slug=post_slug).first()
-    return render_template('posts.html',params=params,post=post)
+    return render_template('posts.html',params=params,post=post,active="posts")
 
 @app.route("/contact",methods=['GET','POST'])
 
@@ -95,7 +95,7 @@ def contact():
         Message:{msg}
         """
         mail.send(message)
-    return render_template('contact.html',params=params)
+    return render_template('contact.html',params=params,active="contact")
 
 if __name__=="__main__":
     app.run(debug=True)#Whenever we make changes in code and save it gets reflected in real-time due to use of debug=True

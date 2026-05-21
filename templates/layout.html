@@ -29,6 +29,8 @@
 		
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="{{url_for('static',filename='css/contact_style.css')}}">
+    <!--posts.css-->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/posts.css')}}">
     
   </head>
   <body class="d-flex flex-column min-vh-100">
@@ -51,17 +53,16 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
-                class="nav-link active"
-                aria-current="page"
+                class="nav-link {%if active=="home"%} text-white fw-bold{%else%} text-secondary{%endif%}"
                 href="{{url_for('index')}}"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('all_posts') }}">Posts</a>
+              <a class="nav-link {%if active=="posts"%} text-white fw-bold{%else%} text-secondary{%endif%}" href="{{ url_for('all_posts') }}">Posts</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+            <li class="nav-item ">
+              <a class="nav-link {%if active=="contact"%} text-white fw-bold{%else%} text-secondary{%endif%}" href="{{url_for('contact')}}">Contact</a>
             </li>
           </ul>
         </div>

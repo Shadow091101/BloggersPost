@@ -142,7 +142,7 @@ h3, .h3 {
 }
 @media (min-width: 1200px) {
   h3, .h3 {
-    font-size: 1.75rem;
+    font-size: 1.75rem
   }
 }
 
@@ -10830,3 +10830,9 @@ textarea.form-control-lg {
   background-position: center;
   background-size: cover;
 }
+
+/* .nav-link.active-link {
+  color: white !important;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+} */

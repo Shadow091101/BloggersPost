@@ -1,0 +1,16 @@
+.post-preview :hover :visited :active{
+    text-decoration: underline black;
+}
+.post-preview *{
+    color:black;
+    text-align: left;
+    text-decoration: none;
+}
+.post-title{
+    font-weight: bolder;
+    font-size: 35px;
+}
+.post-subtitle{
+    font-weight: 300;
+    font-size: 20px;
+}

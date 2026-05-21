@@ -1,3 +1,1 @@
-import os
-
-print(os.getcwd)
+local_server = os.environ.get("LOCAL_SERVER", params.get("local_server")) == "True"

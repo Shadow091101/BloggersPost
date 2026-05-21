@@ -25,3 +25,9 @@ button:not(:disabled),
 .container-xxl {
     max-width: 100% !important;
 }
+
+/* .nav-link.active-link {
+  color: white !important;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+} */
