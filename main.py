@@ -60,6 +60,10 @@ def all_posts():
     posts = Posts.query.order_by(Posts.date.desc()).all()
     return render_template("all_posts.html", params=params, posts=posts,active="posts")
 
+@app.route("/admin_login")
+def admin_login():
+    return render_template("admin_login.html")
+
 @app.route("/posts/<string:post_slug>",methods=['GET'])
 
 def posts(post_slug):
