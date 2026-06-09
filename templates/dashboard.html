@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+
+    <link
+      href="{{url_for('static',filename='css/dashboard.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{url_for('static',filename='css/dashboard_posts.css')}}"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <div class="main_body">
+      <div class="left-side">
+        <div class="main_name">BloggersPost</div>
+        <div class="menu">
+            <h2>Dashboard</h2>
+
+            <a href="{{ url_for('dashboard_posts') }}">Posts</a>
+            <a href="{{ url_for('dashboard_contacts') }}">Contacts</a>
+            <a href="{{ url_for('dashboard_settings') }}">Settings</a>
+        </div>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger logout-btn"> Logout </a>
+      </div>
+      <div class="right-side">
+        <div class="top-panel">
+          <p class="admin-name">Welcome {{admin_name}}</p>
+        </div>
+        <div class="main-dashboard">
+            {%block body%} {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

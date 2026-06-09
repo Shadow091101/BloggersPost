@@ -1,0 +1,28 @@
+{% extends "dashboard.html" %}
+
+{% block body %}
+
+<div>contacts</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      {% for contact in contacts %}
+      
+      <div >
+          <h2 class="contact-name">
+            {{ contact.name }}
+          </h2>
+          <br>
+          <h3 class="contact-email">
+            {{ contact.email }}...
+          </h3>
+        </a>
+      </div>
+      <hr>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

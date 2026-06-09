@@ -1,0 +1,12 @@
+.create-posts-bar{
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: burlywood;
+}
+
+.post-content{
+    display: flex;
+    justify-content: left;
+}

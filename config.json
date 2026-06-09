@@ -4,7 +4,9 @@
         "local_server":"False",
         "local_uri":"mysql+pymysql://root:manavnaik%40123@localhost/bloggersposts",
         "prod_uri":"mysql+pymysql://root:ZlTIZyCBgrlglAGBPrAFOhehLStyDjdP@turntable.proxy.rlwy.net:23062/railway",
-        "blog_name":"BloggersPost"
+        "blog_name":"BloggersPost",
+        "admin_username":"manavnaik",
+        "admin_password":"manavnaik@123"
     },
     "pass":{},
     "mail_params":
